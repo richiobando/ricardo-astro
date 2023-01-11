@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Contact from '../components/Contact.astro';
+import Proyects from '../components/Proyects.astro';
+import Skills from '../components/Skills.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+const {
+  image,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en' data-theme='lofi'>
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body>
+    <main class='main'>
+      {/* stars */}
+      <Header />
+      <Hero />
+      <Proyects />
+      <Skills />
+      <Contact />
+    </main>
+  </body>
+</html>

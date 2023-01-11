@@ -1,8 +1,7 @@
 {
-  "name": "Astro Modern Personal Website",
-  "description": "Astro Modern personal website template with Project Section, CV Section, Paginated Blog, Shop, RSS Feed, SEO Friendly, Visual themes and Responsive Desing.",
+  "name": "@example/blog",
   "type": "module",
-  "version": "1.1.1",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -12,14 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.11.1",
-    "@astrojs/rss": "^1.0.1",
+    "@astrojs/mdx": "^0.14.0",
+    "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^1.0.1",
-    "astro": "^1.2.3",
-    "daisyui": "^2.27.0"
+    "astro": "^1.9.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.7"
+    "@astrojs/react": "^1.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.57.1"
   }
 }

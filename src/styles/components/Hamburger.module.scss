@@ -1,0 +1,21 @@
+@import '../variables';
+
+.container{
+  position: fixed;
+  top: 0;
+  right: 4px;
+  @include mobile(){
+    width: 100%;
+    visibility:visible;
+    button {
+      margin: 10px;
+      position: absolute;
+      right: 0;
+      padding: 4px;
+      &::hover{
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  visibility: hidden;
+}

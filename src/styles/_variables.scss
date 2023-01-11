@@ -1,0 +1,11 @@
+/* variables.module.scss */
+@mixin tablets() {
+  @media (min-width: 701px) and (max-width: 1120px) {
+    @content;
+  }
+}
+@mixin mobile() {
+  @media (max-width: 700px) {
+    @content;
+  }
+}

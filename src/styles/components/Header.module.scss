@@ -1,0 +1,33 @@
+@import '../variables';
+
+@mixin flexbox() {
+  display: flex;
+  flex-direction: row;
+}
+.header {
+  position: fixed;
+  justify-content: space-around;
+  font-weight: 600;
+  // height: 4rem; 
+  width: 100%;
+  @include flexbox;
+  @include mobile(){
+    display: block;
+    .hidden {
+      visibility: hidden;
+    }
+  }
+  ul {
+    @include flexbox;
+    padding: 1.5rem;
+    width: 80%;
+    background: #1b1b1b;
+    justify-content: space-around;
+    @include mobile(){
+      position: relative;
+      display: block;
+      width: 100%;
+      height: max-content;
+    }
+  }
+}
