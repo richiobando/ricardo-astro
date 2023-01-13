@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Hamburger from './atoms/Hamburger.jsx';
-import s from '../styles/components/Header.module.scss';
+import s from '../styles/components/Navbar.module.scss';
 
 export default function Navbar({ sections }) {
   const [navbar, setNavbar] = useState(false);

@@ -1,11 +1,11 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro'
 import Hero from '../components/Hero.astro';
 import Contact from '../components/Contact.astro';
 import Proyects from '../components/Proyects.astro';
-import Skills from '../components/Skills.astro';
+import ShootingStars from '../components/atoms/ShootingStars.jsx';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 const {
@@ -22,12 +22,14 @@ const {
   </head>
   <body>
     <main class='main'>
-      {/* stars */}
-      <Header />
+      <ShootingStars client:load bg={ '#000f3d'}/>
+      <Navbar />
       <Hero />
       <Proyects />
-      <Skills />
-      <Contact />
+      <Contact />  
     </main>
   </body>
 </html>
+
+
+

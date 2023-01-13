@@ -1,0 +1,20 @@
+---
+import Menu from './Menu.jsx';
+import ChangeTheme from "./atoms/ChangeTheme";
+import s from '../styles/components/Navbar.module.scss';
+const sections = [
+  { name: 'Home', link: '#home', external: false },
+  { name: 'Proyects', link: '#proyects', external: false },
+  { name: 'Contact', link: '#contact', external: false },
+  {
+    name: 'Github',
+    link: 'https://www.github.com/richiobando',
+    external: true,
+  },
+];
+---
+
+<nav class={s.container}>
+  <Menu client:load sections={sections} />
+  <ChangeTheme/>
+</nav>
