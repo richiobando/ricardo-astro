@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-// import 
-function shootingStars(canvas, bg) {
+// import
+function shootingStars(canvas, bg, moon = '#454e74') {
   const ctx = canvas.getContext('2d');
 
   const innerWidth = window.innerWidth;
@@ -11,6 +11,8 @@ function shootingStars(canvas, bg) {
   let stars = [];
   let TWO_PI = Math.PI * 2;
   let starRadius = null;
+  let centerX = innerWidth / 2;
+  let centerY = innerHeight / 2;
   let starX = null;
   let starY = null;
   let numStars = 200;
@@ -117,28 +119,46 @@ function shootingStars(canvas, bg) {
 
   function animate() {
     requestAnimationFrame(animate);
+    const x1 = centerX - 0.6 * centerY;
+    const y1 = centerY - 0.4 * centerY;
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+    //create stars
     for (let i in stars) {
       stars[i].update();
       if (stars[i].shooting) {
         stars[i].updateShooting();
       }
     }
+    ctx.beginPath();
+    //create the moon
+    ctx.arc(x1, y1, centerX * 0.2, 0, TWO_PI, false);
+    ctx.fillStyle = moon;
+    ctx.fill();
+    ctx.closePath();
+    const x2 = centerX - 0.5 * centerY;
+    const y2 = centerY - 0.5 * centerY;
+    ctx.beginPath();
+    ctx.arc(x2, y2, centerX * 0.2, 0, TWO_PI, false);
+    ctx.fillStyle = bg;
+    ctx.fill();
+    ctx.fill();
+    ctx.closePath();
   }
   animate();
 }
 
 export default function ShootingStars(props) {
-  const { bg } = props
+  const { bg } = props;
   const canvasRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current;
-    shootingStars(canvas,bg );
+    // need to change canvasRef for a ref in the body for
+    // canvas.addEventListener('wheel', (e) => {})
+    //canvas.addEventListener('click', (e) => {})
+    shootingStars(canvas, bg);
   }, []);
 
-
-  return (
-      <canvas ref={canvasRef} />
-  );
+  return <canvas ref={canvasRef} />;
 }

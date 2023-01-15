@@ -1,5 +1,40 @@
+@import '../variables';
+
 .container {
+  min-: 100vh;
+  font-size: 3rem;
   padding: 100px;
-  height: 80vh;
-  // background-image: url('../../public/landscape.svg');
+  height: 100vh;
+  overflow: hidden;
+  @include tablets() {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  div{
+    align-self: flex-end;
+  }
+  img {
+    align-self: center;
+    height: 300px;
+  }
+}
+@include mobile() {
+  .container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    align-items: center;
+    h2 {
+      font-weight: 400;
+    }
+    img {
+      top: 0%;
+      left: 0%;
+      height: 200px;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 @import '../variables';
 
 .container{
+  z-index: 100;
   position: fixed;
   top: 0;
   right: 4px;
@@ -8,6 +9,7 @@
     width: 100%;
     visibility:visible;
     button {
+      width: max-content;
       margin: 10px;
       position: absolute;
       right: 0;
