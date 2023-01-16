@@ -1,0 +1,12 @@
+---
+const { repo, title, body, image, tools, deploy } = Astro.props;
+---
+
+<article class='card'>
+  <div>
+    <h3>{title}</h3>
+    <p>{body}</p>
+  </div>
+  <img src={image} alt={title} />
+  <div></div>
+</article>

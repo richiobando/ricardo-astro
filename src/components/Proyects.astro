@@ -1,24 +1,12 @@
 ---
-import s from '../styles/components/Proyects.module.scss'
+import s from '../styles/components/Proyects.module.scss';
+import Card from './Card.astro';
+import { data } from './utils/data.js';
 ---
 
 <section class={s.container} id='proyects'>
   <header><h2>Proyects</h2></header>
-  <article class='card'>
-    <div>
-      <h3>Recipe Web App</h3>
-      <p>Serach the healtys recipe you want </p>
-    </div>
-    <img src="/food-app.png" alt="">
-  </article>
-
-  <article class='card'>
-    <div>
-      <h3>Gym Managment Web app</h3>
-      <p>Web app for any Gym  </p>
-    </div>
-    <img src="/liberfit.png" alt="Gym-page-image">
-  </article>
-
-  
+  <div class='grid'>
+    {data.map((p) => <Card repo={p.repo} title={p.title} body={p.body} image={p.image} tools={p.tools} deploy={p.deploy}/>)}
+  </div>
 </section>

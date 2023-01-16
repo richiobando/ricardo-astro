@@ -3,24 +3,8 @@
   height: 100vh;
   padding-top: 100px;
   font-size: 1.5rem;
-
-  @include tablets() {
-    font-size: 2rem;
-    article {
-      margin: 2rem;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-    }
-    article:nth-child(2n-1) {
-      flex-direction: row-reverse;
-    }
-  }
-  div {
-    align-self: flex-end;
-    background: var(--background-color);
-    padding: 10px;
-    height: 50vh;
+  .skills{
+    
   }
   img {
     height: 40vh;
