@@ -95,49 +95,6 @@
   }
 }
 
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  div {
-    
-  }
-  span {
-    display: inline-block;
-    transition: transform 200ms;
-  }
-  h2 {
-    font-weight: 500;
-    margin-bottom: 0.7rem;
-  }
-  p {
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 200;
-    max-width: 30ch;
-  }
-  @include mobile() {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95vw;
-    padding: 1rem 2.5rem;
-    img {
-      width: 80vw;
-    }
-    h2 {
-      margin-bottom: 0.5rem;
-    }
-  }
-}
-
-
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

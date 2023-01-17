@@ -1,12 +1,22 @@
 ---
+import s from '../styles/components/Card.module.scss'
+import Github from '../assets/github.astro';
+import Deploy from '../assets/link.astro';
 const { repo, title, body, image, tools, deploy } = Astro.props;
 ---
 
-<article class='card'>
-  <div>
+<article class={s.card}>
+  <header>
     <h3>{title}</h3>
     <p>{body}</p>
-  </div>
+  </header>
   <img src={image} alt={title} />
-  <div></div>
+  <div >
+    <a href={repo}>
+      <Github height='24' width='24' color='white'/>
+    </a>
+    <a href={deploy}>
+      <Deploy height='24' width='24' color='white'/>
+    </a>
+  </div>
 </article>
