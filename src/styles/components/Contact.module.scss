@@ -1,4 +1,10 @@
+//TODO tamanio igual al del navbar
 .container {
-  height: 100vh;
-  background: #fff;
+  height: 80vh;
+  div{
+    margin: 10vh 0;
+    padding: 2rem;
+    background: var(--background-color);
+  }
+
 }

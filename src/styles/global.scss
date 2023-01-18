@@ -35,16 +35,17 @@ form {
 }
 
 input,
-textarea {
+textarea
+{
   display: block;
   height: 2rem;
   width: 40vw;
-  margin: 0.7rem;
+  margin: 0.7rem 0;
   border: 1px solid var(--background-color);
-  border-radius: 0;
+  border-radius: var(--input-border-radius);
   outline: 0;
   padding: 1.2rem;
-  background-color: var(--input-color);
+  background-color: var(--input-color); 
   color: var(--color);
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition),
@@ -65,7 +66,7 @@ button {
   font-family: var(--font-headers);
   font-weight: 400;
   font-size: 1.2rem;
-  border-radius: 4px;
+  border-radius: var(--input-border-radius);
   border: 1px solid transparent;
   padding: 1rem;
   background-color: hsl(180deg, 85%, 36%);
@@ -88,5 +89,138 @@ canvas {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+
+@import 'variables';
+
+.main {
+  display: flex;
+  // width: 95vw;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.text {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 1rem;
+  max-width: var(--max-width);
+  width: 100%;
+  font-family: var(--font-mono);
+  a {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  p {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+    border-radius: var(--border-radius);
+  }
+  @include mobile() {
+    font-size: 0.8rem;
+    a {
+      padding: 1rem;
+    }
+
+    p,
+    div {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+    }
+
+    p {
+      align-items: center;
+      inset: 0 0 auto;
+      padding: 2rem 1rem 1.4rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+      background: linear-gradient(
+        to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5)
+      );
+      background-clip: padding-box;
+      backdrop-filter: blur(24px);
+    }
+
+    div {
+      align-items: flex-end;
+      pointer-events: none;
+      inset: auto 0 0;
+      padding: 2rem;
+      height: 200px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%
+      );
+
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+  @include tablets() {
+    grid-template-columns: repeat(2, 50%);
+  }
+  @include mobile() {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    span {
+      transform: translateX(4px);
+    }
+  }
+}
+/* Mobile */
+@include mobile() {
+  .content {
+    padding: 4rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+  .logo,
+  .thirteen img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

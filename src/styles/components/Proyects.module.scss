@@ -1,9 +1,21 @@
 @import '../variables';
 .container {
-  height: 100vh;
+  height: 100%;
+  margin: 0 15% 10rem;
   padding-top: 100px;
   font-size: 1.5rem; 
-  h3 {
+  h2 {
     font-weight: 500;
+    padding-bottom: 3rem;
   }
 }
+.proyects{
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: max-content;
+  grid-template-columns: repeat(auto-fill, minmax(min(95vw, 30rem), 1fr));
+}
+.card{
+  grid-column: span 2;
+}
+

@@ -2,11 +2,12 @@
 import s from '../styles/components/Proyects.module.scss';
 import Card from './Card.astro';
 import { data } from './utils/data.js';
+//TODO hover en los botones de  githtub y link
+// tamanio igual al del navbar
 ---
-
 <section class={s.container} id='proyects'>
   <header><h2>Proyects</h2></header>
-  <div class='grid'>
+  <div class={s.proyects}>
     {data.map((p) => <Card repo={p.repo} title={p.title} body={p.body} image={p.image} tools={p.tools} deploy={p.deploy}/>)}
   </div>
 </section>
