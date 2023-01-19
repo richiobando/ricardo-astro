@@ -40,6 +40,9 @@ textarea
   display: block;
   height: 2rem;
   width: 40vw;
+  @include mobile(){
+    width: 95vw;
+  }
   margin: 0.7rem 0;
   border: 1px solid var(--background-color);
   border-radius: var(--input-border-radius);
