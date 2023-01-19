@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-// import
+// canvas = document.getElementById('.canvas')
 function shootingStars(canvas, bg, moon = '#454e74') {
   const ctx = canvas.getContext('2d');
 
@@ -83,7 +83,7 @@ function shootingStars(canvas, bg, moon = '#454e74') {
     return { x: directorX, y: directorY };
   }
   // shoot a shooting star
-  canvas.addEventListener('click', (e) => {
+    document.querySelector('main').addEventListener('click', (e) => {
     const x = e.offsetX;
     const y = e.offsetY;
     const starObj = {
@@ -104,7 +104,7 @@ function shootingStars(canvas, bg, moon = '#454e74') {
     starObj.id = starsIndex;
   });
 
-  canvas.addEventListener('wheel', (e) => {
+  document.querySelector('main').addEventListener('wheel', (e) => {
     mouse.x = e.deltaX;
     mouse.y = e.deltaY;
     if (e.deltaY > 0) {
@@ -150,10 +150,11 @@ function shootingStars(canvas, bg, moon = '#454e74') {
 }
 
 export default function ShootingStars(props) {
-  const { bg } = props;
+  const { bg ,canvas} = props;
   const canvasRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current;
+    
     // need to change canvasRef for a ref in the body for
     // canvas.addEventListener('wheel', (e) => {})
     //canvas.addEventListener('click', (e) => {})
