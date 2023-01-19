@@ -4,7 +4,7 @@ export const data = [
     title: 'Recipe Web App',
     body: 'Serach the healtys recipe you want ',
     image: '/food-app.png',
-    tools: ['ReactJS', 'CSS', 'NodeJs', 'PostgreSQL'],
+    tools: [{name:'ReactJS',icon:''}, {name:'CSS',icon:''}, {name:'NodeJs',icon:''}, {name:'PostgreSQL',icon:''}],
     deploy: 'food-app-client-p4p5.vercel.app/',
   },
   {
@@ -12,7 +12,7 @@ export const data = [
     title: 'Gym Managment Web app',
     body: 'Web app for any Gym ',
     image: '/liberfit.png',
-    tools: ['ReactJS', 'Typescript','Tailwind', 'NodeJs', 'PostgreSQL',],
+    tools: [{name:'ReactJS',icon:'#61dafb'}, {name:'Typescript',icon:'#007acc'},{name:'Tailwind',icon:''}, {name:'NodeJs',icon:'#83cd29'}, {name:'PostgreSQL',icon:'#336791'}],
     deploy: 'liber-fit-pf-phi.vercel.app',
   },
 ];

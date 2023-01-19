@@ -1,10 +1,12 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import {useEffect} from "react";
 
+import BaseHead from '../components/BaseHead.astro';
 import Navbar from '../components/Navbar.astro'
 import Hero from '../components/Hero.astro';
 import Contact from '../components/Contact.astro';
 import Proyects from '../components/Proyects.astro';
+import Footer from '../components/Footer.astro';
 import ShootingStars from '../components/atoms/ShootingStars.jsx';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
@@ -13,6 +15,12 @@ const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
 } = Astro.props;
+// let globalDocument 
+// useEffect(() => {
+//   globalDocument = document
+  
+// }, []);
+
 ---
 
 <!DOCTYPE html>
@@ -22,11 +30,13 @@ const {
   </head>
   <body>
     <main class='main'>
-      <ShootingStars client:load bg={ 'hsl(229 ,34%,15%)'} />
+      <!-- <ShootingStars client:load bg={ 'hsl(229 ,34%,15%)'} canvas={globalDocument} /> -->
+      <ShootingStars client:load bg={ 'hsl(229 ,34%,15%)'}  />
       <Navbar />
       <Hero />
       <Proyects />
-      <Contact />  
+      <Contact /> 
+      <Footer/> 
     </main>
   </body>
 </html>

@@ -1,0 +1,21 @@
+---
+import { icons } from './utils/icons.jsx';
+import PostgreSQL from '../assets/PostgreSQL.astro';
+const {content} = Astro.props
+let Icon = (icons[content.name])
+if(content.name==='PostgreSQL'){
+  Icon = PostgreSQL
+}
+---
+<div class='skill'>
+  <p>{content.name}</p>
+  <Icon/>
+</div>
+<style>
+  .skill{
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
