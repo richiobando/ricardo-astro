@@ -23,10 +23,13 @@ h1 {
 }
 
 a {
+  padding: 2px;
   color: inherit;
   text-decoration: none;
+  fill: #fff;
   &:hover {
     color: #888;
+    fill: #888;
   }
 }
 

@@ -6,11 +6,10 @@
 }
 .container {
   position: fixed;
-  justify-content: space-around;
   font-weight: 600;
-  // height: 4rem; 
   width: 100%;
   @include flexbox;
+  justify-content: space-around;
   @include mobile(){
     display: block;
     .hidden {

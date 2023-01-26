@@ -1,19 +1,29 @@
 ---
 import Menu from './Menu.jsx';
 import ChangeTheme from "./atoms/ChangeTheme";
+import Github from "../assets/github.astro";
 import s from '../styles/components/Navbar.module.scss';
 const sections = [
   { name: 'Home', link: '#home', external: false },
+  { name: 'About', link: '#about', external: false },
   { name: 'Proyects', link: '#proyects', external: false },
   { name: 'Contact', link: '#contact', external: false },
-  {
-    name: 'Github',
-    link: 'https://www.github.com/richiobando',
-    external: true,
-  },
 ];
+const navbar = false
 ---
 <nav class={s.container}>
-  <Menu client:load sections={sections} />
+  <Menu client:load sections={sections}/>
+  <ul class={!navbar ? s.hidden : ''}>
+    <li class='text'>
+      <a
+      class={s.link}
+        href='https://www.github.com/richiobando'
+        target="_blank"
+      >
+      <Github height={'24'} width={'24'} />
+      Github
+      </a>
+    </li>
+  </ul>
   <!-- <ChangeTheme/> -->
 </nav>
