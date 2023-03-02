@@ -15,4 +15,12 @@ export const data = [
     tools: [{name:'ReactJS',icon:'#61dafb'}, {name:'Typescript',icon:'#007acc'},{name:'Tailwind',icon:''}, {name:'NodeJs',icon:'#83cd29'}, {name:'PostgreSQL',icon:'#336791'}],
     deploy: 'https://liber-fit-pf-phi.vercel.app/',
   },
+  {
+    repo: 'https://github.com/richiobando/connect-four',
+    title: 'Connect four game',
+    body: 'The clasic of connect four ',
+    image: '/connect-four.png',
+    tools: [{name:'ReactJS',icon:'#61dafb'}, {name:'Typescript',icon:'#007acc'}],
+    deploy: 'https://connect-four-peach.vercel.app',
+  },
 ];
